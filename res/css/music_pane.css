@@ -1,0 +1,16 @@
+/*解决IE6下滚动抖动的问题*/
+*html{
+	background-attachment: fixed;
+}
+
+/*解决IE6下不兼容 position:fixed 的问题*/
+#music_pane{
+	float: right;
+	position: fixed;
+	bottom: 10px;
+	right: 0px;
+	_position: absolute;
+	_bottom: auto;
+	_top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+	_margin-bottom: 10px;
+}

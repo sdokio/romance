@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="love, romance, story" />
+    <title>Romance of us</title>
+
+    <script src="./res/js/jquery.js" type="text/javascript"></script>
+    <script src="./res/js/garden.js" type="text/javascript"></script>
+    <script src="./res/js/functions.js" type="text/javascript"></script>
+    <script src="./res/js/mymouse.js" type="text/javascript"></script>
+    <script src="./res/js/snow.js" type="text/javascript"></script>
+    <script src="./res/js/garden_dev.js" type="text/javascript"></script>
+    <script src="./res/js/functions_dev.js" type="text/javascript"></script>
+    
+    <link rel="stylesheet" href="./res/css/default.css" type="text/css" />
+    <link rel="stylesheet" href="./res/css/music_pane.css" type="text/css" />
+    <link rel="shortcut icon" href="./res/images/favicon.ico" type="image/x-icon" />
+
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('./res/font/digital-7_mono.ttf') format("truetype");
+        }
+        html {
+            cursor: url('./res/images/arrow.cur'), default;
+        }
+    </style>
+
+    <style type="text/css">
+        .foot_link:link {
+            color: #aaa;
+            text-decoration: none;
+        }
+        .foot_link:visited {
+            color: #aaa;
+            text-decoration: none;
+        }
+        .foot_link:hover {
+            color: #666;
+            text-decoration: underline;
+        }
+        .foot_link:active {
+            color: #000;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="mainDiv">
+        <div id="content" style="width: 1110px; height: 625px; margin-top: 23.5px; margin-left: 119.5px;">
+            <div id="code" style="margin-top: 112.5px;">
+                <span class="comments">/**</span><br>
+                <span class="space"><span class="comments">* Nov 15, 2014 is our special, romantic anniversary,</span><br>
+                <span class="space"><span class="comments">* this page is a holding to celebrate and commemorate.</span><br>
+                <span class="space"><span class="comments">*/</span><br>
+                Boy i = <span class="keyword">new</span> Boy(<span class="string">"SoyaDokio"</span>);<br>
+                Girl u = <span class="keyword">new</span> Girl(<span class="string">"Yearningyeap18"</span>);<br>
+                <span class="comments">// Sept 2, 2012, You had been living deeply in my heart</span><br>
+                <span class="comments">// when I met you first time.</span><br>
+                i.haveCrushOn(u);<br>
+                <span class="comments">// Nov 15, 2014, I decided to tell you how I fell.</span><br>
+                i.love(u);<br>
+                <span class="comments">// On that day, I was indeed the luckiest person on Earth!</span><br>
+                u.accept();<br>
+                <span class="comments">// Since then, my life with you is like an endless romantic movie.</span><br>
+                i.sweetWith(u);<br>
+                <span class="comments">// You say that you won't be so easy to get married with me.</span><br>
+                <span class="comments">// So I kept waiting and I had confidence that you will.</span><br>
+                <span class="keyword">boolean</span> isHesitate = <span class="keyword">true</span>;<br>
+                <span class="keyword">while</span> (isHesitate) {<br>
+                <span class="placeholder">i.waitFor(u);<br>
+                <span class="placeholder"><span class="comments">// I think it is an important decision</span><br>
+                <span class="placeholder"><span class="comments">// and you should think it over.</span><br>
+                <span class="placeholder">isHesitate = u.thinkOver();<br>
+                }<br>
+                <span class="comments">// Nov 15, 2019, I decided to tell you my proposal</span><br>
+                <span class="comments">// at our 5th anniversary.</span><br>
+                i.proposeTo(u);<br>
+                <span class="comments">// I was the happiest one in the world!</span><br>
+                isHesitate = u.accept();<br>
+                <span class="comments">// After a romantic wedding, we will live happily ever after.</span><br>
+                i.marry(u);<br>
+                i.liveHappilyWith(u);<br>
+            </span></span></span></span></span></span></span>_</div>
+            <div id="loveHeart">
+                <canvas id="garden" width="670" height="625"></canvas>
+                <div id="words" style="position: absolute; top: 218.5px; left: 629.5px;">
+                    <div id="messages" style="display: block;">
+                        Yearningyeap18, we have fallen in love for
+                        <div id="elapseClock"><span class="digit">0</span> day <span class="digit">00</span> hr <span class="digit">00</span> min <span class="digit">00</span> sec</div>
+                    </div>
+                    <div id="loveu" style="display: block;">
+                        Love u forever and ever.<br>
+                        <div class="signature">- SoyaDokio</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+        var together = new Date("2014/11/15 21:15:00");
+
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+        } else {
+            setTimeout(function() {
+                startHeartAnimation();
+            }, 5000);
+
+            timeElapse(together);
+            setInterval(function() {
+                timeElapse(together);
+            }, 500);
+
+            adjustCodePosition();
+            $("#code").typewriter();
+        }
+    </script>
+
+    <!-- 鼠标雪花动画效果 BEGIN -->
+    <!-- 放这里原因：特效需要等画面加载完毕后加载 -->
+    <script type="text/javascript">
+        $.fn.snow({
+            minSize: 5, //雪花的最小尺寸
+            maxSize: 5, //雪花的最大尺寸
+            newOn: 1800 //雪花出现的频率 这个数值越小雪花越多
+        });
+    </script>
+    <!-- 鼠标雪花动画效果 END -->
+
+    <!-- 页脚 BEGIN -->
+    <div style="clear: both">
+        <p style="text-align: center;"><span style="font-family: arial; color: #aaa">
+            <a class="foot_link" href="http://soyadokio.cn/" target="_blank" title="Go to home page">Home</a>
+            &nbsp;<span style="color: #ddd">|</span>&nbsp;
+            <a class="foot_link" href="http://soyadokio.cn/about" target="_blank" title="A brief profile of me">About</a>
+            &nbsp;<span style="color: #ddd">|</span>&nbsp;
+            <a class="foot_link" href="http://soyadokio.cn/contact" target="_blank" title="Contact to get more information">Contact</a>
+        </span></p>
+        <p style="text-align: center;">
+            <span style="font-family: arial; color: #aaa">Copyright &copy; 2014-2019 <a class="foot_link" href="http://soyadokio.cn/" target="_blank" title="http://soyadokio.cn/">soyadokio.cn</a> 
+                <span style="color: #ddd">|</span>
+             All Rights Reserved
+        </span></p>
+    </div>
+    <!-- 页脚 END -->
+
+    <!-- 背景音乐 BEGIN -->
+    <!-- 放这里原因：音乐文件过大最后加载 -->
+    <div id="music_pane" style="z-index: 999">
+        <a id="audio_btn" style="cursor: pointer"><img src="./res/images/pause.gif" width="27" height="64" id="music_btn" border="0" /></a>
+    </div>
+    <audio id="music" autoplay="autoplay" loop>
+      <source src="./res/music/bgm.mp3" type="audio/mpeg" />
+      <source src="./res/music/bgm.ogg" type="audio/ogg" />
+      <embed height="0" width="0" src="./res/music/bgm.mp3" />
+    </audio>
+    <script>
+    $("#audio_btn").click(function() {
+        var music = document.getElementById("music");
+        if(music.paused) {
+            music.play();
+            $("#music_btn").attr("src", "./res/images/pause.gif");
+        }else{
+            music.pause();
+            $("#music_btn").attr("src", "./res/images/play.gif");
+        }
+    });
+    </script>
+    <!-- 背景音乐 END -->
+
+</body>
+</html>
